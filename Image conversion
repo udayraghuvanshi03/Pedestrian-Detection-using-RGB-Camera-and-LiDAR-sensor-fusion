@@ -1,0 +1,20 @@
+ TO FORM MP4 FROM IMAGES
+ 
+ 1) rosrun image_view extract_images _sec_per_frame:=0.01 image:=<IMAGETOPICINBAGFILE>
+ 2)
+    On the other terminal window, run rosbag play <BAGFILE>
+    A sequence of images will be created.
+3) TO FORM VIDEO
+ ffmpeg -framerate 60 -i frame%04d.jpg -c:v libx264 -r 30 ir_output.mp4
+
+BEST 
+ffmpeg -framerate 8.73 -i %04d.jpg -c:v libx264 -profile:v high -crf 20 -pix_fmt yuv420p rgb_output.mp4
+
+TO CONVERT TO mp4
+ ffmpeg -i output.avi -c:v copy -c:a copy -y output_filename.mp4
+
+
+python3 detect.py --source output_day_rgb.mp4 --classes 0 --save-txt
+
+
+
