@@ -1,1 +1,1 @@
-# Pedestrian-Detection-using-RGB-Camera-and-LiDAR-sensort-fusion
+# Pedestrian-Detection-using-RGB-Camera-and-LiDAR-sensor-fusion
